@@ -1,0 +1,53 @@
+<!doctype html>
+<!-- @dsCard group="Foundations" name="Spacing, radii, elevation" subtitle="4–24 spacing · 8–16 radii · two shadows" viewport="700x760" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head>
+<body><div class="card">
+<h1 class="t">Spacing, radii and elevation</h1>
+<p class="s">All three scales are short on purpose. Bars shown at 5× scale.</p>
+<div class="sect">Spacing — the whole scale</div>
+<div style="display:flex;align-items:center;gap:14px;padding:6px 0">
+ <div class="lbl" style="width:64px">xs</div>
+ <div style="width:20px;height:20px;background:var(--primary);border-radius:5px"></div>
+ <div class="lbl">4pt</div></div>
+<div style="display:flex;align-items:center;gap:14px;padding:6px 0">
+ <div class="lbl" style="width:64px">sm</div>
+ <div style="width:40px;height:20px;background:var(--primary);border-radius:5px"></div>
+ <div class="lbl">8pt</div></div>
+<div style="display:flex;align-items:center;gap:14px;padding:6px 0">
+ <div class="lbl" style="width:64px">md</div>
+ <div style="width:60px;height:20px;background:var(--primary);border-radius:5px"></div>
+ <div class="lbl">12pt</div></div>
+<div style="display:flex;align-items:center;gap:14px;padding:6px 0">
+ <div class="lbl" style="width:64px">lg</div>
+ <div style="width:80px;height:20px;background:var(--primary);border-radius:5px"></div>
+ <div class="lbl">16pt</div></div>
+<div style="display:flex;align-items:center;gap:14px;padding:6px 0">
+ <div class="lbl" style="width:64px">xl</div>
+ <div style="width:120px;height:20px;background:var(--primary);border-radius:5px"></div>
+ <div class="lbl">24pt</div></div>
+<div class="sect">Corner radii</div>
+<div class="g4"><div style="text-align:center">
+ <div style="height:70px;background:var(--surface);border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow-card)"></div>
+ <div class="lbl" style="margin-top:6px"><b>sm</b>8pt</div></div>
+<div style="text-align:center">
+ <div style="height:70px;background:var(--surface);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow-card)"></div>
+ <div class="lbl" style="margin-top:6px"><b>control</b>10pt</div></div>
+<div style="text-align:center">
+ <div style="height:70px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow-card)"></div>
+ <div class="lbl" style="margin-top:6px"><b>button</b>12pt</div></div>
+<div style="text-align:center">
+ <div style="height:70px;background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-card)"></div>
+ <div class="lbl" style="margin-top:6px"><b>md</b>16pt</div></div></div>
+<div class="row" style="margin-top:12px">
+ <div style="flex:1;height:44px;background:var(--surface);border:1px solid var(--border);border-radius:999px;display:flex;align-items:center;justify-content:center">
+  <span class="lbl">pill · 999</span></div></div>
+<div class="sect">Elevation</div>
+<div class="g2">
+ <div style="text-align:center"><div style="height:80px;background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-card)"></div>
+  <div class="lbl" style="margin-top:6px"><b>cardShadow()</b>radius 8, y 4</div></div>
+ <div style="text-align:center"><div style="height:80px;background:var(--surface);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-floating)"></div>
+  <div class="lbl" style="margin-top:6px"><b>floatingShadow()</b>radius 6, y 4</div></div>
+</div>
+<div class="note"><b>The spacing scale stops at 24.</b> Anything larger in the app is a one-off literal at the call site, not a token. If a sixth step is genuinely needed, add it to <code>Spacing.swift</code> first.</div>
+<div class="note"><b>Cards are 16, buttons are 12.</b> A prominent primary CTA uses <code>Radius.button</code>; a non-prominent one switches to <code>Radius.pill</code>. That swap is the only place radius carries meaning. Tag chips are 12 — not pills.</div>
+</div></body></html>

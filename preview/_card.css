@@ -1,0 +1,107 @@
+/* Shared CSS for every preview card. Cards target 700×<height>. */
+@import url('../tokens.css');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  /* Specimens of a light mobile UI. The Design System pane is dark-themed,
+     so without this the browser forces dark controls onto a light card. */
+  color-scheme: light;
+}
+.card {
+  width: 700px;
+  padding: 32px;
+  box-sizing: border-box;
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
+.card.on-muted { background: var(--muted); }
+
+h1.t { font: 700 15px/1.3 var(--font-body); margin: 0 0 5px; color: var(--text-primary); }
+p.s  { font: 400 12px/17px var(--font-body); color: var(--text-tertiary);
+       margin: 0 0 20px; max-width: 66ch; }
+.sect { font: 700 10px/1 var(--font-body); letter-spacing: .08em; text-transform: uppercase;
+        color: var(--text-tertiary); margin: 24px 0 11px; }
+.sect:first-of-type { margin-top: 0; }
+
+.row  { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.col  { display: flex; flex-direction: column; gap: 12px; }
+.g2   { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.g3   { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.g4   { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+
+.mono { font-family: var(--font-mono); font-size: 11px; }
+.lbl  { font: 400 11px/15px var(--font-mono); color: var(--text-tertiary); }
+.lbl b { display: block; font: 500 11px/15px var(--font-body); color: var(--text-primary); }
+
+/* swatches */
+.sw { border-radius: 12px; padding: 12px; min-height: 66px; display: flex;
+      flex-direction: column; justify-content: space-between;
+      border: 1px solid rgba(15,23,42,.08); }
+.sw .n { font: 600 12px/1.2 var(--font-body); }
+.sw .v { font: 400 10px/1.2 var(--font-mono); opacity: .9; }
+
+/* a pane that carries the dark palette */
+.pane { border-radius: 16px; padding: 20px; background: var(--background);
+        border: 1px solid var(--border); }
+.theme-dark.pane { color-scheme: dark; color: var(--text-primary); }
+
+.note { font: 400 12px/18px var(--font-body); color: var(--text-secondary);
+        background: var(--surface); border: 1px solid var(--border);
+        border-radius: 12px; padding: 12px 14px; margin-top: 16px; }
+.note b { color: var(--text-primary); font-weight: 700; }
+.note code, code { font-family: var(--font-mono); font-size: 11px;
+        background: var(--muted); color: var(--primary-text);
+        padding: 1px 5px; border-radius: 4px; }
+
+/* ---- real components, built to the app's measurements ---- */
+.cta {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 56px; padding: 0 var(--sp-lg); width: 100%; border: 0;
+  font: 700 18px/28px var(--font-body); color: #fff;
+  border-radius: var(--r-button);
+  background: linear-gradient(180deg, var(--cta-grad-from) 0%, var(--cta-grad-to) 100%);
+  box-shadow: inset 0 6px 5px var(--cta-inner-light), 0 0 6px var(--cta-glow);
+}
+.cta--pill    { border-radius: var(--r-pill); }
+.cta--pressed { opacity: .85; transform: scale(.98); }
+.cta--disabled{ opacity: .5; }
+.cta--secondary {
+  background: linear-gradient(180deg, var(--cta2-grad-from) 0%, var(--cta2-grad-to) 100%);
+  color: var(--primary-text); border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+
+.chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: var(--chip-pad-y) var(--chip-pad-x);
+  border-radius: var(--chip-radius);
+  background: var(--chip-fill); border: 1px solid var(--chip-border);
+  color: var(--chip-label);
+  font: 500 12px/20px var(--font-body);
+}
+.chip svg { width: var(--chip-icon); height: var(--chip-icon); flex: none; }
+.chip--conflict {
+  background: var(--caution-surface); border-color: var(--caution-border);
+  color: var(--caution);
+}
+.chip--strike { text-decoration: line-through; text-decoration-color: var(--caution); }
+
+.field-label { font: 500 14px/1.2 var(--font-body); color: var(--field-label); margin-bottom: 6px; }
+.field {
+  height: var(--field-height); padding: 0 var(--field-pad-x);
+  display: flex; align-items: center;
+  background: var(--field-fill); border: 1px solid var(--field-border);
+  border-radius: var(--field-radius);
+  font: 400 16px/1.2 var(--font-body); color: var(--text-primary);
+}
+.field--focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--focus); }
+.field--error { border-color: var(--danger); }
+
+.appcard {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-md); padding: var(--sp-lg);
+  box-shadow: var(--shadow-card);
+}

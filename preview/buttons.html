@@ -1,0 +1,36 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Buttons" subtitle="Gradient CTA, states, secondary, dark" viewport="700x900" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head>
+<body><div class="card">
+<h1 class="t">Buttons</h1>
+<p class="s">The primary CTA is a gradient surface, not a flat fill — orange gradient, a white inner highlight along the top edge, and a warm outer glow. All three live in <code>seEatPrimaryCTAFill</code>.</p>
+
+<div class="sect">Primary — states</div>
+<div class="col" style="gap:9px">
+  <button class="cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:20px;height:20px"><path d="M3 8.5A2 2 0 015 6.5h2l1.2-2h7.6L17 6.5h2a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="12.5" r="3.2"/></svg>Snap Menu</button>
+  <div class="lbl">default · minHeight 56 · radius 12 · Avenir Heavy 18</div>
+  <button class="cta cta--pressed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:20px;height:20px"><path d="M3 8.5A2 2 0 015 6.5h2l1.2-2h7.6L17 6.5h2a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="12.5" r="3.2"/></svg>Snap Menu</button>
+  <div class="lbl">pressed · opacity .85 · scale .98 · easeOut 120ms · selection haptic</div>
+  <button class="cta cta--disabled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:20px;height:20px"><path d="M3 8.5A2 2 0 015 6.5h2l1.2-2h7.6L17 6.5h2a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="12.5" r="3.2"/></svg>Snap Menu</button>
+  <div class="lbl">disabled · opacity .5</div>
+</div>
+
+<div class="sect">Non-prominent — radius switches to pill</div>
+<button class="cta cta--pill" style="width:240px">Continue</button>
+
+<div class="sect">Secondary</div>
+<button class="cta cta--secondary" style="width:240px">Choose Photos</button>
+<div class="lbl" style="margin-top:6px">white → #FFFAF6 gradient · 1px border · card shadow</div>
+
+<div class="sect">On dark — the CTA is unchanged</div>
+<div class="theme-dark pane" style="background:#1E1E1E">
+  <button class="cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:20px;height:20px"><path d="M3 8.5A2 2 0 015 6.5h2l1.2-2h7.6L17 6.5h2a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="12.5" r="3.2"/></svg>Get my picks</button>
+  <div class="lbl" style="margin-top:8px;color:rgba(235,235,245,.6)">same gradient, verified on screen</div>
+</div>
+
+<div class="note"><b>The CTA gradient is theme-invariant.</b> Sampled at <code>#F46B10 → #F26203</code> in light and <code>#F56B10 → #F26102</code> in dark — the same. It never uses <code>primaryButton</code>'s dark value. A dark mockup that darkens the CTA is wrong.</div>
+
+<div class="note"><b>Prominence changes the radius, not the colour.</b> Prominent uses <code>Radius.button</code> (12); non-prominent switches to <code>Radius.pill</code>. Same fill either way.</div>
+
+<div class="note"><b>Press is 0.98 over 120ms with a <code>.selection</code> haptic.</b> Gentle on purpose — <code>.impact</code> was judged too loud for buttons that already animate.</div>
+</div></body></html>

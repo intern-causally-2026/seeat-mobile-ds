@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- @dsCard group="Foundations" name="Surfaces & text" subtitle="Cool greys, AA-checked text" viewport="700x600" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head>
+<body><div class="card">
+<h1 class="t">Surfaces, text and lines</h1>
+<p class="s">Cool grey surfaces with orange carried entirely by the accent layer.</p>
+<div class="sect">Surfaces</div>
+<div class="g3">
+  <div class="sw" style="background:#F9FBFA;color:#0F172A">
+    <span class="n">background</span><div><span class="v">#F9FBFA</span><div class="v" style="opacity:.75">the token</div></div>
+  </div>
+  <div class="sw" style="background:#FFFFFF;color:#0F172A">
+    <span class="n">surface</span><div><span class="v">#FFFFFF</span><div class="v" style="opacity:.75">cards</div></div>
+  </div>
+  <div class="sw" style="background:#F3F2EB;color:#0F172A">
+    <span class="n">muted</span><div><span class="v">#F3F2EB</span><div class="v" style="opacity:.75">what screens paint</div></div>
+  </div>
+</div>
+<div class="sect">Text</div>
+<div class="g3">
+  <div class="sw" style="background:#0F172A;color:#FFFFFF">
+    <span class="n">textPrimary</span><div><span class="v">#0F172A</span><div class="v" style="opacity:.75">slate-900</div></div>
+  </div>
+  <div class="sw" style="background:#3C3C43;color:#FFFFFF">
+    <span class="n">textSecondary</span><div><span class="v">#3C3C43</span><div class="v" style="opacity:.75">@ .82 · 6.3:1</div></div>
+  </div>
+  <div class="sw" style="background:#3C3C43;color:#FFFFFF">
+    <span class="n">textTertiary</span><div><span class="v">#3C3C43</span><div class="v" style="opacity:.75">@ .72 · AA floor</div></div>
+  </div>
+</div>
+<div class="sect">Lines &amp; status</div>
+<div class="g4">
+  <div class="sw" style="background:#E2E8F0;color:#0F172A">
+    <span class="n">border</span><div><span class="v">#E2E8F0</span></div>
+  </div>
+  <div class="sw" style="background:#FADBD8;color:#0F172A">
+    <span class="n">focus</span><div><span class="v">#FADBD8</span></div>
+  </div>
+  <div class="sw" style="background:#15803D;color:#FFFFFF">
+    <span class="n">successText</span><div><span class="v">#15803D</span></div>
+  </div>
+  <div class="sw" style="background:#B91C1C;color:#FFFFFF">
+    <span class="n">dangerText</span><div><span class="v">#B91C1C</span></div>
+  </div>
+</div>
+<div class="note"><b>The page ground is <code>muted</code>, not <code>background</code>.</b> Verified on screen: the menu and create screens paint <code>#F3F2EB</code>, warming toward <code>#FCF6ED</code> at the bottom edge. <code>background #F9FBFA</code> is the declared token but not what these screens show.</div>
+<div class="note"><b><code>textTertiary</code> sits at the AA floor.</b> It was raised from 0.4/0.3 opacity, which measured 2.1–2.5:1 and failed. 0.72 is the lightest that still clears 4.5:1 while staying visibly below <code>textSecondary</code>.</div>
+</div></body></html>

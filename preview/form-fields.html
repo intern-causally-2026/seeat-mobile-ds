@@ -1,0 +1,21 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Form fields" subtitle="56pt box, label, focus, error, dark" viewport="700x680" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head>
+<body><div class="card">
+<h1 class="t">Form fields</h1>
+<p class="s">From <code>SeEatField.swift</code>. Fixed 56pt height, 16pt horizontal padding, 12pt radius.</p>
+<div class="sect">Light</div>
+<div class="col" style="gap:14px">
+  <div><div class="field-label">Email</div><div class="field">you@example.com</div></div>
+  <div><div class="field-label">Email</div><div class="field field--focus">you@example.com</div>
+    <div class="lbl" style="margin-top:5px">focused</div></div>
+  <div><div class="field-label">Email</div><div class="field field--error">not-an-email</div>
+    <div style="font:400 14px/20px var(--font-body);color:var(--danger-text);margin-top:5px">Enter a valid email address</div></div>
+</div>
+<div class="sect">Dark</div>
+<div class="theme-dark pane" style="background:#1E1E1E">
+  <div class="field-label">Email</div><div class="field">you@example.com</div>
+  <div class="lbl" style="margin-top:8px;color:rgba(235,235,245,.6)">fill #2C2C2E · border #3A3A3C · label #9A9AA0</div>
+</div>
+<div class="note"><b>The label grey is hardcoded, and it is the weakest value in the system.</b> <code>SeEatField</code> sets <code>#757575</code> directly rather than reaching for a token — it predates the semantic text roles. On white that measures 4.6:1, only just over the AA line. Promoting it to <code>textSecondary</code> would fix both the inconsistency and the margin.</div>
+</div></body></html>

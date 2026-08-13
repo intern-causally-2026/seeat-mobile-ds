@@ -1,0 +1,60 @@
+<!doctype html>
+<!-- @dsCard group="Reference" name="The app itself" subtitle="Screenshots this system was checked against" viewport="700x1100" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head>
+<body><div class="card">
+<h1 class="t">The app itself</h1>
+<p class="s">Every value in this system was read from source in <code>origin/integration</code> and then verified against these screenshots, taken from a build of that same commit on an iPhone 17 Pro Max simulator. Nothing here came from a brand brief.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<div>
+  <div style="display:flex;gap:6px">
+    <img src="../reference/create-light.png" alt="Create · the scan entry point light" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+    <img src="../reference/create-dark.png" alt="Create · the scan entry point dark" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+  </div>
+  <div class="lbl" style="margin-top:5px"><b>Create · the scan entry point</b>light · dark</div>
+</div><div>
+  <div style="display:flex;gap:6px">
+    <img src="../reference/menu-completed-light.png" alt="Menu · a scanned menu light" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+    <img src="../reference/menu-completed-dark.png" alt="Menu · a scanned menu dark" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+  </div>
+  <div class="lbl" style="margin-top:5px"><b>Menu · a scanned menu</b>light · dark</div>
+</div><div>
+  <div style="display:flex;gap:6px">
+    <img src="../reference/item-detail-light.png" alt="Dish detail · tags, extras, CTA light" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+    <img src="../reference/item-detail-dark.png" alt="Dish detail · tags, extras, CTA dark" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+  </div>
+  <div class="lbl" style="margin-top:5px"><b>Dish detail · tags, extras, CTA</b>light · dark</div>
+</div><div>
+  <div style="display:flex;gap:6px">
+    <img src="../reference/food-profile-light.png" alt="Food profile · form controls light" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+    <img src="../reference/food-profile-dark.png" alt="Food profile · form controls dark" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+  </div>
+  <div class="lbl" style="margin-top:5px"><b>Food profile · form controls</b>light · dark</div>
+</div><div>
+  <div style="display:flex;gap:6px">
+    <img src="../reference/premium-light.png" alt="Paywall light" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+    <img src="../reference/premium-dark.png" alt="Paywall dark" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+  </div>
+  <div class="lbl" style="margin-top:5px"><b>Paywall</b>light · dark</div>
+</div><div>
+  <div style="display:flex;gap:6px">
+    <img src="../reference/account-light.png" alt="Account light" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+    <img src="../reference/account-dark.png" alt="Account dark" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+  </div>
+  <div class="lbl" style="margin-top:5px"><b>Account</b>light · dark</div>
+</div><div>
+  <div style="display:flex;gap:6px">
+    <img src="../reference/onboarding-light.png" alt="Onboarding light" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+    <img src="../reference/onboarding-dark.png" alt="Onboarding dark" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+  </div>
+  <div class="lbl" style="margin-top:5px"><b>Onboarding</b>light · dark</div>
+</div><div>
+  <div style="display:flex;gap:6px">
+    <img src="../reference/root-auth-light.png" alt="Auth light" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+    <img src="../reference/root-auth-dark.png" alt="Auth dark" style="width:50%;border-radius:9px;border:1px solid var(--border)">
+  </div>
+  <div class="lbl" style="margin-top:5px"><b>Auth</b>light · dark</div>
+</div>
+</div>
+<div class="note"><b>Reproduce any of these.</b> <code>xcrun simctl launch &lt;udid&gt; xyz.causally.seeat.ios -debugScene item-detail -debugTheme dark</code>. There are 28 scenes, 2 themes, 7 auth states and 3 locales — see <code>Debug/DebugLaunchConfiguration.swift</code>. Those canonical flags are recent; a stale simulator build will silently ignore them and hand you identical screenshots, which is worth checking before trusting a capture.</div>
+<div class="note"><b>Where source and screen disagreed, the screen won and is noted on the card.</b> Two cases so far: the page ground is <code>muted</code> rather than <code>background</code>, and the CTA gradient does not change between themes.</div>
+</div></body></html>

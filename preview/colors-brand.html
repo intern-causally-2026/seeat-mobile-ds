@@ -1,0 +1,45 @@
+<!doctype html>
+<!-- @dsCard group="Foundations" name="Brand orange" subtitle="Three values plus the CTA gradient" viewport="700x600" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"></head>
+<body><div class="card">
+<h1 class="t">Brand orange — three values, chosen by contrast</h1>
+<p class="s">The most important rule in this system. Each orange exists because a different contrast requirement forces it. Picking by eye fails WCAG AA.</p>
+<div class="sect">Light</div>
+<div class="g3">
+  <div class="sw" style="background:#FF7B23;color:#0F172A">
+    <span class="n">primary</span><div><span class="v">#FF7B23</span><div class="v" style="opacity:.75">fills / icons only · 2.6:1</div></div>
+  </div>
+  <div class="sw" style="background:#EC6A1C;color:#0F172A">
+    <span class="n">primaryButton</span><div><span class="v">#EC6A1C</span><div class="v" style="opacity:.75">white label · 3.2:1 AA large</div></div>
+  </div>
+  <div class="sw" style="background:#C2410C;color:#FFFFFF">
+    <span class="n">primaryText</span><div><span class="v">#C2410C</span><div class="v" style="opacity:.75">orange text · 5.2:1 AA</div></div>
+  </div>
+</div>
+<div class="sect">Supporting</div>
+<div class="g4">
+  <div class="sw" style="background:#E86012;color:#0F172A">
+    <span class="n">primarySaturated</span><div><span class="v">#E86012</span></div>
+  </div>
+  <div class="sw" style="background:#542100;color:#FFFFFF">
+    <span class="n">primaryDark</span><div><span class="v">#542100</span></div>
+  </div>
+  <div class="sw" style="background:#FFC694;color:#0F172A">
+    <span class="n">secondary</span><div><span class="v">#FFC694</span></div>
+  </div>
+  <div class="sw" style="background:#313131;color:#FFFFFF">
+    <span class="n">saturated</span><div><span class="v">#313131</span></div>
+  </div>
+</div>
+<div class="sect">The CTA gradient is a fourth pair</div>
+<div class="g2">
+  <div class="sw" style="background:#F56B0F;color:#0F172A">
+    <span class="n">cta from</span><div><span class="v">#F56B0F</span></div>
+  </div>
+  <div class="sw" style="background:#F16000;color:#0F172A">
+    <span class="n">cta to</span><div><span class="v">#F16000</span></div>
+  </div>
+</div>
+<div class="note"><b>Never use <code>primary</code> for text.</b> At 2.6:1 on white it fails AA outright. Small orange text uses <code>primaryText</code>; a filled button with a white label uses <code>primaryButton</code>; <code>primary</code> is for fills, icons and accents.</div>
+<div class="note"><b>The CTA gradient matches none of them.</b> <code>#F56B0F → #F16000</code> lives in <code>PrimaryCTAFill.swift</code> and was verified on screen at <code>#F46B10 → #F26203</code>. Rebuilding a CTA from a flat <code>primary</code> fill loses both contrast and the inner highlight.</div>
+</div></body></html>

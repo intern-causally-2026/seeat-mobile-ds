@@ -1,0 +1,231 @@
+/* ============================================================
+   SeEat — Mobile Design System
+   ============================================================
+   Built from the shipping iOS app, August 2026. Nothing here
+   comes from a brand brief.
+
+   PROVENANCE
+   ------------------------------------------------------------
+   Every value below was read from source in `origin/integration`
+   and then verified against screenshots of a build of that same
+   commit running on an iPhone 17 Pro Max simulator.
+
+     Theme/AppColor.swift      colour, light + dark
+     Theme/AppFont.swift       families, sizes, Figma text styles
+     Theme/Radius.swift        corner radii
+     Theme/Shadow.swift        elevation
+     Theme/Spacing.swift       spacing scale
+     PrimaryCTAFill.swift      the CTA gradient
+     SecondaryCTAFill.swift    the secondary gradient
+     SeEatField.swift          form fields
+     Features/Menu/MenuGridCard.swift   tag chips
+     Features/Menu/MenuTag.swift        tag categories
+
+   If a value here disagrees with those files, those files win.
+
+   THEMING
+   ------------------------------------------------------------
+   Dark is opt-in via `.theme-dark`. It is deliberately NOT
+   wired to [data-theme] or prefers-color-scheme: the Design
+   System pane sets its own theme attribute on the document
+   root, and a host-driven selector would silently flip every
+   card. These cards are specimens of a mobile UI; dark is shown
+   on purpose, never inherited.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ============================================================
+     SURFACES
+     ============================================================ */
+  --background:      #F9FBFA;   /* the token */
+  --surface:         #FFFFFF;
+  --muted:           #F3F2EB;   /* what menu/create screens actually paint */
+
+  /* ============================================================
+     BRAND ORANGE — three values, chosen by contrast
+     ------------------------------------------------------------
+     This is the single most important rule in the system.
+     ============================================================ */
+  --primary:          #FF7B23;  /* fills, icons, accents. NEVER text — 2.6:1 */
+  --primary-button:   #EC6A1C;  /* filled CTA with a white label — 3.2:1 AA large */
+  --primary-text:     #C2410C;  /* orange text / links — 5.2:1 AA */
+  --primary-saturated:#E86012;  /* pressed, deeper accents */
+  --primary-dark:     #542100;  /* roasted-brown display headings */
+  --primary-muted:    rgba(230, 84, 0, 0.10);
+  --secondary:        #FFC694;  /* soft peach — weak buttons */
+  --saturated:        #313131;
+  --soft:             #BFDBFE;
+
+  /* CTA gradient — its own pair, matching NEITHER orange above.
+     Verified on screen at #F46B10 → #F26203. */
+  --cta-grad-from:   #F56B0F;
+  --cta-grad-to:     #F16000;
+  --cta-inner-light: rgba(255,255,255,0.10);
+  --cta-glow:        rgba(255,123,35,0.10);
+  --cta2-grad-from:  #FFFFFF;
+  --cta2-grad-to:    #FFFAF6;
+
+  /* ============================================================
+     TEXT
+     ============================================================ */
+  --text-primary:    #0F172A;
+  --text-secondary:  rgba(60, 60, 67, 0.82);   /* 6.3:1 */
+  --text-tertiary:   rgba(60, 60, 67, 0.72);   /* ~4.5:1, the AA floor */
+
+  /* ============================================================
+     LINES
+     ============================================================ */
+  --border:          #E2E8F0;
+  --focus:           #FADBD8;
+
+  /* ============================================================
+     STATUS
+     ============================================================ */
+  --success-surface: #F0FDF4;
+  --success-border:  #BBF7D0;
+  --success-text:    #15803D;
+  --danger:          #EF4444;
+  --danger-surface:  #FEE2E2;
+  --danger-border:   #FECACA;
+  --danger-text:     #B91C1C;
+  --danger-disabled: #FCA5A5;
+  --allergen-surface:#FDF0DB;
+  --allergen-text:   #E65400;
+
+  /* ============================================================
+     TAG CHIPS — from MenuGridCard.swift + MenuTag.swift
+     ============================================================ */
+  --chip-fill:       #F7F5F2;   /* warm neutral, the DEFAULT for every chip */
+  --chip-border:     #F0EBE2;
+  --chip-label:      #6B5747;   /* 6.3:1 on the fill */
+  --chip-radius:     12px;      /* NOT a pill */
+  --chip-pad-x:      8px;
+  --chip-pad-y:      3px;
+  --chip-icon:       12px;
+
+  /* caution palette — used only when a tag conflicts with your profile */
+  --caution:         #D41316;
+  --caution-surface: rgba(212, 19, 22, 0.10);
+  --caution-border:  rgba(212, 19, 22, 0.20);
+
+  /* category icon accents — fixed, identical in light and dark */
+  --accent-caution:  #D41316;
+  --accent-dietary:  #34C759;
+  --accent-attribute:#FFCC00;
+
+  /* ============================================================
+     FORM FIELD — from SeEatField.swift
+     ============================================================ */
+  --field-height:    56px;
+  --field-radius:    12px;
+  --field-pad-x:     16px;
+  --field-fill:      #FFFFFF;
+  --field-border:    #E6E5EF;
+  --field-label:     #757575;   /* hardcoded in the component, 4.6:1 */
+
+  /* ============================================================
+     SHADOW TINT
+     ============================================================ */
+  --shadow-soft:     rgba(30, 41, 59, 0.05);
+
+  /* ============================================================
+     TYPE
+     ============================================================ */
+  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body:    'Avenir', 'Avenir Next', 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, Menlo, monospace;
+
+  --w-regular: 400;
+  --w-medium:  500;
+  --w-semi:    600;
+  --w-bold:    700;
+
+  /* ============================================================
+     RADIUS — Radius.swift
+     ============================================================ */
+  --r-sm:      8px;
+  --r-control: 10px;
+  --r-button:  12px;
+  --r-md:      16px;    /* the card radius */
+  --r-pill:    999px;
+
+  /* ============================================================
+     SPACING — Spacing.swift. The whole scale.
+     ============================================================ */
+  --sp-xs: 4px;
+  --sp-sm: 8px;
+  --sp-md: 12px;
+  --sp-lg: 16px;
+  --sp-xl: 24px;
+
+  /* ============================================================
+     ELEVATION — Shadow.swift
+     ============================================================ */
+  --shadow-card:     0 4px 16px var(--shadow-soft);   /* radius 8, y 4 */
+  --shadow-floating: 0 4px 12px var(--shadow-soft);   /* radius 6, y 4 */
+
+  /* ============================================================
+     MOTION — AppButtonStyle.swift
+     ============================================================ */
+  --press-scale:  0.98;
+  --press-dur:    120ms;
+  --ease-out:     cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ============================================================
+   DARK — the `dark:` half of every token above.
+   Opt in with class="theme-dark".
+   ============================================================ */
+.theme-dark {
+  --background:      #1E1E1E;
+  --surface:         #252525;
+  --muted:           #2D2D2D;
+
+  --primary:          #FF8A4C;
+  --primary-button:   #E8731F;
+  --primary-text:     #FF7B23;   /* the TRUE brand orange — legal as text only here */
+  --primary-saturated:#FF8A4C;
+  --primary-dark:     #FF7B23;
+  --primary-muted:    rgba(255, 138, 76, 0.15);
+  --secondary:        #4A2C17;
+  --saturated:        #E2E8F0;
+  --soft:             #1E3A5F;
+
+  --text-primary:    #E2E8F0;
+  --text-secondary:  rgba(235, 235, 245, 0.60);
+  --text-tertiary:   rgba(235, 235, 245, 0.56);
+
+  --border:          #475569;
+  --focus:           #5C3A2E;
+
+  --success-surface: #064E3B;
+  --success-border:  #059669;
+  --success-text:    #4ADE80;
+  --danger:          #F87171;
+  --danger-surface:  #450A0A;
+  --danger-border:   #7F1D1D;
+  --danger-text:     #FCA5A5;
+  --danger-disabled: #7F1D1D;
+  --allergen-surface:#3A2A12;
+  --allergen-text:   #FFB37A;
+
+  --chip-fill:       #2E2A26;
+  --chip-border:     #45403A;
+  --chip-label:      #C9B49F;
+
+  --caution:         #DA1619;
+  --caution-surface: rgba(218, 22, 25, 0.10);
+  --caution-border:  rgba(218, 22, 25, 0.20);
+
+  --field-fill:      #2C2C2E;
+  --field-border:    #3A3A3C;
+  --field-label:     #9A9AA0;
+
+  --shadow-soft:     rgba(255, 255, 255, 0.05);
+}
+
+/* The CTA gradient is NOT overridden in .theme-dark — verified identical
+   on screen in both themes. PrimaryCTAFill never uses primaryButton's dark
+   value. Any dark mockup that darkens the CTA is wrong. */
